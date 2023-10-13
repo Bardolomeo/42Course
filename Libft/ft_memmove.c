@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
-int	ft_isalpha(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	unsigned char *from;
+	unsigned char *to;
+	size_t	i;
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+	from = (unsigned char *)src;
+	to = (unsigned char *)dest;
+
+	if (to > from && to - from < n)
+	{
+		i = n;
+		while (i--)
+			to[i] = from[i];
+		return dest;
+	}
+
+	if (to == from && from - to )
+		return dest;
+}

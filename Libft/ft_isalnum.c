@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	else
-		return (0);
+	else if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+/*
+int main()
+{
+	printf("%d\n", ft_isalnum('A'));
+	printf("%d\n", ft_isalnum('z'));
+	printf("%d\n", ft_isalnum('0'));
+	printf("%d\n", ft_isalnum('9'));
+	printf("%d\n", ft_isalnum(';'));
+}*/

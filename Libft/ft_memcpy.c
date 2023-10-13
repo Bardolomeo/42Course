@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	unsigned char	*ptr;
+	unsigned char	*pt;
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+	ptr = (unsigned char *)dest;
+	pt = (unsigned char *)src;
+	while (n--)
+	{
+		*ptr = *pt;
+		ptr++;
+		pt++;
+	}
+	return (dest);
+}
+/*
+int main()
+{
+	char src[20] = "12345678";
+	char dest[20] = "abcdefghijklmno";
+
+	ft_memcpy(dest, src, 5);
+	printf("%s\n", dest);
+	ft_memcpy(dest, src, 0);
+	printf("%s\n", dest);
+	ft_memcpy(dest, src, 8);
+	printf("%s\n", dest);
+	ft_memcpy(dest, src, 9);
+	printf("%s\n", dest);
+}*/

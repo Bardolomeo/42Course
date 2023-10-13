@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
-int	ft_isalpha(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	unsigned char	*ptr;
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+	ptr = s;
+	while (n--)
+		*ptr++ = 0;
+}
+/*
+int main()
+{
+	char str[50] = "mannaggia mannaggia";
+	ft_bzero(str, 7);
+	printf("%s\n", &str[7]);
+	ft_bzero(str, 0);
+	printf("%s\n", &str[7]);
+	ft_bzero(str, 30);
+	printf("%s\n", &str[37]);
+}*/

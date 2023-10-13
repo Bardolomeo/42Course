@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
-
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+/*
+int main()
+{
+	printf("%d\n", ft_isascii(0));
+	printf("%d\n", ft_isascii(3));
+	printf("%d\n", ft_isascii(';'));
+	printf("%d\n", ft_isascii('a'));
+	printf("%d\n", ft_isascii(128));
+}*/

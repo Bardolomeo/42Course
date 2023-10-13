@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
-int	ft_isalpha(int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	unsigned char	*ptr;
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+	ptr = (unsigned char *) s;
+	while (n--)
+		*ptr++ = (unsigned char) c;
+	return (s);
+}
+/*
+int main()
+{
+	char str[50] = "ciaocane";
+	ft_memset(str, 'a', 4);
+	printf("%s\n", str);
+	ft_memset(str, 'd', 0);
+	printf("%s\n", str);
+}*/

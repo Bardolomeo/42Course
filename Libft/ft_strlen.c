@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                        :+:      :+:    :+:  */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
-int	ft_isalpha(int c)
+size_t	ft_strlen(const char *s)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	size_t	count;
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+	count = 0;
+	while (*s)
+	{
+		count++;
+		s++;
+	}
+	return (count);
+}
+/*
+int main()
+{
+	printf("%d\n", ft_strlen("ciao"));
+	printf("%d\n", ft_strlen("ciao suca"));
+	printf("%d\n", ft_strlen(""));
+}*/
