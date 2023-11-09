@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:33:35 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/21 14:52:11 by gsapio           ###   ########.fr       */
+/*   Created: 2023/10/26 14:22:56 by gsapio            #+#    #+#             */
+/*   Updated: 2023/10/26 14:27:33 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	unsigned int	i;
+
+	if (s == NULL)
+		return ;
+	i = 0;
+	while (s[i] != 0)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
-/*
-int main()
-{
-	printf("%d\n", ft_toupper('c'));
-	printf("%d\n", ft_toupper('A'));
-	printf("%d\n", ft_toupper('.'));
-	printf("%d\n", ft_toupper('b'));
-	printf("%d\n", ft_toupper(4.7));
-}*/

@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*ptr;
 	unsigned char	*pt;
 
+	if (dest == NULL && src == NULL)
+		return (dest);
 	ptr = (unsigned char *)dest;
 	pt = (unsigned char *)src;
 	while (n--)
@@ -42,4 +44,5 @@ int main()
 	printf("%s\n", dest);
 	ft_memcpy(dest, src, 9);
 	printf("%s\n", dest);
-}*/
+}
+*/

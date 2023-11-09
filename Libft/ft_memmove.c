@@ -11,33 +11,31 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*from;
 	unsigned char	*to;
 	size_t			i;
+	size_t			len;
 
+	i = 0;
 	from = (unsigned char *)src;
 	to = (unsigned char *)dest;
 	if (to == from || n == 0)
 		return (dest);
-	if (to > from && to - from < (int)n)
+	len = n;
+	if (to > from)
+		while (len-- > 0)
+			to[len] = from[len];
+	else
 	{
-		i = n;
-		while (--i)
+		while (i < len)
+		{
 			to[i] = from[i];
-		return (dest);
+			i++;
+		}
 	}
-	if (from > to && from - to < (int)n)
-	{
-		i = -1;
-		while (++i < n)
-			from[i] = to[i];
-		return (dest);
-	}
-	ft_memcpy(dest, src, n);
 	return (dest);
 }
 /*
@@ -45,7 +43,7 @@ int main()
 {
 	char src[50] = "ciao papareddu";
 	char dest[50] = "pezzo di merda vaffanculo";
-	
+
 	ft_memmove(dest, src, 5);
 	printf("%s\n", dest);
 	ft_memmove(dest, src, 0);

@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:45:25 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/17 14:45:32 by gsapio           ###   ########.fr       */
+/*   Updated: 2023/11/01 14:57:43 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-//#include <bsd/string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int				i;
+	size_t	i;
 
 	i = -1;
 	if (size == 0)
@@ -39,7 +37,7 @@ int main()
 {
 	char dest[] = "123456";
 	char dest1[] = "123456";
-	
+
 	printf("%d\t%s\n", (int)ft_strlcpy(dest, "abc", 0), dest);
 	printf("%d\t%s\n", (int)ft_strlcpy(dest, "abc", 3), dest);
 	printf("%d\t%s\n", (int)ft_strlcpy(dest, "abc", 5), dest);

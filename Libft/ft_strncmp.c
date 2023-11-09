@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:18:27 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/18 17:18:34 by gsapio           ###   ########.fr       */
+/*   Updated: 2023/10/22 15:15:51 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char			*str1;
-	char			*str2;
+	unsigned char	*str1;
+	unsigned char	*str2;
 	unsigned long	i;
 
 	i = 0;
-	str1 = (char *)s1;
-	str2 = (char *)s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
 	while (*str1 == *str2 && *str1 != 0 && i < n - 1)
 	{
 		str1++;
@@ -34,15 +36,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (0);
 }
+
 /*
 int main()
 {
-	printf("%d\n", ft_strncmp("abba", "abbaio", 10));
-	printf("%d\n", ft_strncmp("abba", "abba", 5));
-	printf("%d\n", ft_strncmp("", "abbaio", 2));
-	printf("%d\n\n", ft_strncmp("cappa", "abbaio", 4));
-	printf("%d\n", strncmp("abba", "abbaio", 10));
-	printf("%d\n", strncmp("abba", "abba", 5));
-	printf("%d\n", strncmp("", "abbaio", 2));
+	printf("%d\n", ft_strncmp("t", "", 0));
+	printf("%d\n", ft_strncmp("", "1", 1));
+	printf("%d\n", ft_strncmp("1", "", 1));
+	printf("%d\n", ft_strncmp("cappa", "abbaio", 4));
+	printf("%d\n\n", ft_strncmp("......", "......", 7));
+	printf("%d\n", strncmp("t", "", 0));
+	printf("%d\n", strncmp("", "1", 1));
+	printf("%d\n", strncmp("1", "", 1));
 	printf("%d\n", strncmp("cappa", "abbaio", 4));
-}*/
+	printf("%d\n\n", strncmp("......", "......", 7));
+}
+*/

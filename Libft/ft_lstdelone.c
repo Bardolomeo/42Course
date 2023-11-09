@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:33:35 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/21 14:52:11 by gsapio           ###   ########.fr       */
+/*   Created: 2023/10/26 16:44:01 by gsapio            #+#    #+#             */
+/*   Updated: 2023/10/26 16:48:32 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	if (!lst)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-/*
-int main()
-{
-	printf("%d\n", ft_toupper('c'));
-	printf("%d\n", ft_toupper('A'));
-	printf("%d\n", ft_toupper('.'));
-	printf("%d\n", ft_toupper('b'));
-	printf("%d\n", ft_toupper(4.7));
-}*/

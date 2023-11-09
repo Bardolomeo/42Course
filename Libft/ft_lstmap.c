@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:33:35 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/21 14:52:11 by gsapio           ###   ########.fr       */
+/*   Created: 2023/10/28 11:46:22 by gsapio            #+#    #+#             */
+/*   Updated: 2023/11/01 14:50:46 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	t_list	*head;
+	t_list	*temp;
+	void	*res;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	head = NULL;
+	while (lst)
+	{
+		res = f(lst->content);
+		temp = ft_lstnew(res);
+		if (!temp)
+		{
+			del(res);
+			ft_lstclear(&head, del);
+			return (NULL);
+		}
+		lst = lst->next;
+		ft_lstadd_back(&head, temp);
+	}
+	return (head);
 }
-/*
-int main()
-{
-	printf("%d\n", ft_toupper('c'));
-	printf("%d\n", ft_toupper('A'));
-	printf("%d\n", ft_toupper('.'));
-	printf("%d\n", ft_toupper('b'));
-	printf("%d\n", ft_toupper(4.7));
-}*/

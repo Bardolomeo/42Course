@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:33:35 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/21 14:52:11 by gsapio           ###   ########.fr       */
+/*   Created: 2023/10/21 14:16:25 by gsapio            #+#    #+#             */
+/*   Updated: 2023/10/31 19:29:54 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strdup(const char *s)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	size_t	len;
+	size_t	i;
+	char	*str;
+
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
+	while (s[++i])
+		str[i] = s[i];
+	str[i] = 0;
+	return (str);
 }
 /*
 int main()
 {
-	printf("%d\n", ft_toupper('c'));
-	printf("%d\n", ft_toupper('A'));
-	printf("%d\n", ft_toupper('.'));
-	printf("%d\n", ft_toupper('b'));
-	printf("%d\n", ft_toupper(4.7));
+	printf("%s", ft_strdup("qwertyuiopasdfghjkwrghrysjharthtehthrehthth"));
 }*/

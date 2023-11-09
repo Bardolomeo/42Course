@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsapio <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:37:16 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/18 16:37:22 by gsapio           ###   ########.fr       */
+/*   Updated: 2023/10/22 14:15:30 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*ptr;
 	int		i;
+	char	*c2;
 
 	i = 0;
 	ptr = (char *)s;
-	while (ptr[i] != (char)c && ptr[i] != 0)
+	c2 = (char *)&c;
+	while (ptr[i] != *c2 && ptr[i] != 0)
 		i++;
-	if (ptr[i] == c)
+	if (ptr[i] == *c2)
 		return (&ptr[i]);
 	return (NULL);
 }

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsapio <gsapio@student.42firenze.it >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:33:35 by gsapio            #+#    #+#             */
-/*   Updated: 2023/10/21 14:52:11 by gsapio           ###   ########.fr       */
+/*   Created: 2023/10/21 10:40:05 by gsapio            #+#    #+#             */
+/*   Updated: 2023/10/21 12:36:01 by gsapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	size_t			i;
+
+	i = 0;
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	while (i < n)
+	{
+		if ((*ptr1 - *ptr2) != 0)
+			return ((int)(*ptr1 - *ptr2));
+		ptr1++;
+		ptr2++;
+		i++;
+	}
+	return (0);
 }
-/*
-int main()
-{
-	printf("%d\n", ft_toupper('c'));
-	printf("%d\n", ft_toupper('A'));
-	printf("%d\n", ft_toupper('.'));
-	printf("%d\n", ft_toupper('b'));
-	printf("%d\n", ft_toupper(4.7));
-}*/

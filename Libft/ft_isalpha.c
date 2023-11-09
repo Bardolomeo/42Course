@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_isalpha(int c)
@@ -21,7 +20,9 @@ int	ft_isalpha(int c)
 		return (0);
 }
 
-//int main()
-//{
-//	printf("%d\n", ft_isalpha('C'));
-//}
+/*
+int main()
+{
+	printf("%d\n", ft_isalpha('C'));
+}
+*/
