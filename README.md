@@ -16,8 +16,6 @@ This repository serves as an archive for projects completed as part of the 42Cou
 - [Project 3: Get_next_line](Get_next_line/)
 - (More projects to come)
 
-[Provide a list of projects along with links to their respective directories.]
-
 ## Getting Started
 
 To access and explore a specific project, navigate to its directory and follow the instructions provided in the project's README or documentation.
