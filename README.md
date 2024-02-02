@@ -15,7 +15,7 @@ This repository serves as an archive for projects completed as part of the 42Cou
 - [Project 2: ft_printf](printf/)
 - [Project 3: Get_next_line](Get_next_line/)
 - [Project 4: So_long](So_long/)
-- (More projects to come)
+- [Project 6: Pipex](pipex/)
 
 ## Getting Started
 
